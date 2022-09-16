@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         redColorView.backgroundColor = .red
-        
         redColorView.alpha = 0.3
         
         yellowColorView.backgroundColor = .yellow
