@@ -15,9 +15,12 @@ class ViewController: UIViewController {
     
     @IBOutlet var nextButton: UIButton!
     
+    var isOnRedColor = false
+    var isOnYellowColor = false
+    var isOnGreenColor = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         redColorView.backgroundColor = .red
         
@@ -28,12 +31,6 @@ class ViewController: UIViewController {
         
         greenColorView.backgroundColor = .green
         greenColorView.alpha = 0.3
-        
-    }
-
-    @IBAction func nextButtonTapped() {
-        
-        nextButton.setTitle("NEXT", for: .normal)
     }
     
     override func viewWillLayoutSubviews() {
@@ -44,6 +41,33 @@ class ViewController: UIViewController {
         greenColorView.layer.cornerRadius = redColorView.frame.size.width / 2
         nextButton.layer.cornerRadius = 12
     }
-    
+
+    @IBAction func nextButtonTapped() {
+        
+        nextButton.setTitle("NEXT", for: .normal)
+        
+        switch isOnRedColor {
+        case false where isOnYellowColor == false && isOnGreenColor == false:
+            isOnRedColor = true
+            redColorView.alpha = 1
+        case true where isOnYellowColor == false && isOnGreenColor == false:
+            isOnRedColor = false
+            isOnYellowColor = true
+            redColorView.alpha = 0.3
+            yellowColorView.alpha = 1
+        case false where isOnYellowColor == true && isOnGreenColor == false:
+            isOnYellowColor = false
+            isOnGreenColor = true
+            yellowColorView.alpha = 0.3
+            greenColorView.alpha = 1
+        case false where isOnYellowColor == false && isOnGreenColor == true:
+            isOnRedColor = true
+            isOnGreenColor = false
+            redColorView.alpha = 1
+            greenColorView.alpha = 0.3
+        default:
+            break
+        }
+    }
 }
 
