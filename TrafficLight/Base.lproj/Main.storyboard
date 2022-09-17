@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="HhM-Jj-gcd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="HhM-Jj-gcd">
                                 <rect key="frame" x="146" y="79" width="138" height="512.66666666666663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYO-aG-syR">
@@ -34,10 +34,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="YYO-aG-syR" firstAttribute="height" secondItem="Ur8-H3-Fhl" secondAttribute="width" id="W0w-15-3pn"/>
                                     <constraint firstItem="YYO-aG-syR" firstAttribute="width" secondItem="Ur8-H3-Fhl" secondAttribute="height" id="p8j-M4-nSE"/>
-                                    <constraint firstItem="Ur8-H3-Fhl" firstAttribute="width" secondItem="f2c-cl-g2F" secondAttribute="height" id="qBo-Qj-qYJ"/>
-                                    <constraint firstItem="Ur8-H3-Fhl" firstAttribute="height" secondItem="f2c-cl-g2F" secondAttribute="width" id="rEi-nm-Wl0"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMb-DJ-hW1">
