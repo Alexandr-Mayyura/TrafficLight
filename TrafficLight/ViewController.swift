@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var nextButton: UIButton!
     
-    var isOnRedColor = false
-    var isOnYellowColor = false
-    var isOnGreenColor = false
+    private var isOnRedColor = false
+    private var isOnYellowColor = false
+    private var isOnGreenColor = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
