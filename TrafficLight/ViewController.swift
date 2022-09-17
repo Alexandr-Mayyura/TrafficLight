@@ -46,9 +46,6 @@ class ViewController: UIViewController {
         nextButton.setTitle("NEXT", for: .normal)
         
         switch isOnRedColor {
-        case false where isOnYellowColor == false && isOnGreenColor == false:
-            isOnRedColor = true
-            redColorView.alpha = 1
         case true where isOnYellowColor == false && isOnGreenColor == false:
             isOnRedColor = false
             isOnYellowColor = true
@@ -65,7 +62,8 @@ class ViewController: UIViewController {
             redColorView.alpha = 1
             greenColorView.alpha = 0.3
         default:
-            break
+            isOnRedColor = true
+            redColorView.alpha = 1
         }
     }
 }
