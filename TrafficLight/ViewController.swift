@@ -9,61 +9,44 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var redColorView: UIView!
-    @IBOutlet var yellowColorView: UIView!
-    @IBOutlet var greenColorView: UIView!
-    
-    @IBOutlet var nextButton: UIButton!
-    
-    private var alpha = 0
-    
-    private var isOnRedColor = false
-    private var isOnYellowColor = false
-    private var isOnGreenColor = false
-    
+    let redLightButton = UIButton()
+    let yellowLightButton = UIButton()
+    let greenLightButton = UIButton()
+    let goButton = UIButton()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redColorView.backgroundColor = .red
-        redColorView.alpha = 0.3
-        
-        yellowColorView.backgroundColor = .yellow
-        yellowColorView.alpha = 0.3
-        
-        greenColorView.backgroundColor = .green
-        greenColorView.alpha = 0.3
+        goButton.addTarget(self, action: #selector (animated), for: .touchUpInside)
+
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        setupButtons()
+    }
+    
+    @objc func animated(_ sender: UIButton) {
+        animatedButton(button: yellowLightButton)
+        animatedButton(button: redLightButton)
+        animatedButton(button: greenLightButton)
         
-        redColorView.layer.cornerRadius = redColorView.frame.size.width / 2
-        yellowColorView.layer.cornerRadius = redColorView.frame.size.width / 2
-        greenColorView.layer.cornerRadius = redColorView.frame.size.width / 2
-        nextButton.layer.cornerRadius = 12
     }
 
-    @IBAction func nextButtonTapped() {
+    func animatedButton(button: UIButton) {
+        let keyFrameAnimation = CAKeyframeAnimation(keyPath:"position")
+        let mutablePath = CGMutablePath()
+        mutablePath.move(to: CGPoint(x: 50, y: 200))
+        mutablePath.addQuadCurve(to: CGPoint(x: 150, y: 100), control: CGPoint(x: 250, y: 200))
         
-        nextButton.setTitle("NEXT", for: .normal)
-        
-        switch alpha {
-        case 1:
-            redColorView.alpha = 0.3
-            yellowColorView.alpha = 1
-            alpha += 1
-        case 2:
-            yellowColorView.alpha = 0.3
-            greenColorView.alpha = 1
-            alpha += 1
-        case 3:
-            redColorView.alpha = 1
-            greenColorView.alpha = 0.3
-            alpha = 1
-        default:
-            alpha += 1
-            redColorView.alpha = 1
-        }
+        keyFrameAnimation.path = mutablePath
+        keyFrameAnimation.duration = 2.0
+        keyFrameAnimation.fillMode = .forwards
+        keyFrameAnimation.isRemovedOnCompletion = false
+        button.layer.add(keyFrameAnimation, forKey: "animation")
     }
+//    @IBAction func nextButtonTapped() {
+
 }
 

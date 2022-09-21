@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F28AC0228DB8DB9004BC268 /* SetupAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28AC0128DB8DB9004BC268 /* SetupAnchor.swift */; };
 		1F47F5DF28D3B46600F45A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F47F5DE28D3B46600F45A13 /* AppDelegate.swift */; };
 		1F47F5E128D3B46600F45A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F47F5E028D3B46600F45A13 /* SceneDelegate.swift */; };
 		1F47F5E328D3B46600F45A13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F47F5E228D3B46600F45A13 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F28AC0128DB8DB9004BC268 /* SetupAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAnchor.swift; sourceTree = "<group>"; };
 		1F47F5DB28D3B46600F45A13 /* TrafficLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F47F5DE28D3B46600F45A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F47F5E028D3B46600F45A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				1F47F5DE28D3B46600F45A13 /* AppDelegate.swift */,
 				1F47F5E028D3B46600F45A13 /* SceneDelegate.swift */,
 				1F47F5E228D3B46600F45A13 /* ViewController.swift */,
+				1F28AC0128DB8DB9004BC268 /* SetupAnchor.swift */,
 				1F47F5E428D3B46600F45A13 /* Main.storyboard */,
 				1F47F5E728D3B46900F45A13 /* Assets.xcassets */,
 				1F47F5E928D3B46900F45A13 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F28AC0228DB8DB9004BC268 /* SetupAnchor.swift in Sources */,
 				1F47F5E328D3B46600F45A13 /* ViewController.swift in Sources */,
 				1F47F5DF28D3B46600F45A13 /* AppDelegate.swift in Sources */,
 				1F47F5E128D3B46600F45A13 /* SceneDelegate.swift in Sources */,

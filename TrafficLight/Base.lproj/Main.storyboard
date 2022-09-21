@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,72 +12,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="HhM-Jj-gcd">
-                                <rect key="frame" x="146" y="79" width="138" height="512.66666666666663"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYO-aG-syR">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138.33333333333334"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ur8-H3-Fhl">
-                                        <rect key="frame" x="0.0" y="187.33333333333331" width="138" height="138"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-cl-g2F">
-                                        <rect key="frame" x="0.0" y="374.33333333333331" width="138" height="138.33333333333331"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="YYO-aG-syR" firstAttribute="width" secondItem="Ur8-H3-Fhl" secondAttribute="height" id="p8j-M4-nSE"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMb-DJ-hW1">
-                                <rect key="frame" x="125.33333333333333" y="686.66666666666663" width="179.33333333333337" height="91.333333333333371"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="START">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="EyN-IE-7Eo"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="HhM-Jj-gcd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2gu-DH-TEl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="aMb-DJ-hW1" secondAttribute="bottom" constant="120" id="Hhr-96-n9z"/>
-                            <constraint firstItem="HhM-Jj-gcd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.55" id="VD0-io-7Og"/>
-                            <constraint firstItem="HhM-Jj-gcd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="XNc-g7-clw"/>
-                            <constraint firstItem="aMb-DJ-hW1" firstAttribute="width" secondItem="f2c-cl-g2F" secondAttribute="width" multiplier="1.3" id="bao-x6-oeN"/>
-                            <constraint firstItem="aMb-DJ-hW1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cXK-N1-Ixm"/>
-                            <constraint firstItem="aMb-DJ-hW1" firstAttribute="top" secondItem="HhM-Jj-gcd" secondAttribute="bottom" constant="95" id="yrG-51-bV5"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="greenColorView" destination="f2c-cl-g2F" id="Ukg-8g-gdD"/>
-                        <outlet property="nextButton" destination="aMb-DJ-hW1" id="iSV-a3-EhY"/>
-                        <outlet property="redColorView" destination="YYO-aG-syR" id="RsK-JT-m98"/>
-                        <outlet property="yellowColorView" destination="Ur8-H3-Fhl" id="2pw-j8-Tox"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.3720930232558146" y="3.218884120171674"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
