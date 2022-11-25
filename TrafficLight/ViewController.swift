@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
  
-    
     @IBOutlet var redLight: UIView!
     @IBOutlet var yellowLight: UIView!
     @IBOutlet var greenLight: UIView!
@@ -57,7 +56,6 @@ class ViewController: UIViewController {
             currentLight = .red
         }
     }
-    
 }
 
 extension ViewController {
