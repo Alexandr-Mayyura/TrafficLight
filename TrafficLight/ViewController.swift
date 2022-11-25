@@ -8,45 +8,60 @@
 import UIKit
 
 class ViewController: UIViewController {
+ 
     
-    let redLightButton = UIButton()
-    let yellowLightButton = UIButton()
-    let greenLightButton = UIButton()
-    let goButton = UIButton()
-
-
+    @IBOutlet var redLight: UIView!
+    @IBOutlet var yellowLight: UIView!
+    @IBOutlet var greenLight: UIView!
+    
+    @IBOutlet var startButton: UIButton!
+    
+    private var currentLight = CurrentLight.red
+    private let lightIsOn: CGFloat = 1
+    private let lightIsOff: CGFloat = 0.3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goButton.addTarget(self, action: #selector (animated), for: .touchUpInside)
-
+        startButton.layer.cornerRadius = 10
+        
+        redLight.alpha = lightIsOff
+        yellowLight.alpha = lightIsOff
+        greenLight.alpha = lightIsOff
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        setupButtons()
+        redLight.layer.cornerRadius = redLight.frame.width / 2
+        yellowLight.layer.cornerRadius = redLight.frame.width / 2
+        greenLight.layer.cornerRadius = redLight.frame.width / 2
     }
     
-    @objc func animated(_ sender: UIButton) {
-        animatedButton(button: yellowLightButton)
-        animatedButton(button: redLightButton)
-        animatedButton(button: greenLightButton)
+    @IBAction func startButtonPressed() {
+        if startButton.currentTitle == "START" {
+            startButton.setTitle("NEXT", for: .normal)
+        }
         
+        switch currentLight {
+        case .red:
+            greenLight.alpha = lightIsOff
+            redLight.alpha = lightIsOn
+            currentLight = .yellow
+        case .yellow:
+            redLight.alpha = lightIsOff
+            yellowLight.alpha = lightIsOn
+            currentLight = .green
+        case .green:
+            greenLight.alpha = lightIsOn
+            yellowLight.alpha = lightIsOff
+            currentLight = .red
+        }
     }
-
-    func animatedButton(button: UIButton) {
-        let keyFrameAnimation = CAKeyframeAnimation(keyPath:"position")
-        let mutablePath = CGMutablePath()
-        mutablePath.move(to: CGPoint(x: 50, y: 200))
-        mutablePath.addQuadCurve(to: CGPoint(x: 150, y: 100), control: CGPoint(x: 250, y: 200))
-        
-        keyFrameAnimation.path = mutablePath
-        keyFrameAnimation.duration = 2.0
-        keyFrameAnimation.fillMode = .forwards
-        keyFrameAnimation.isRemovedOnCompletion = false
-        button.layer.add(keyFrameAnimation, forKey: "animation")
-    }
-//    @IBAction func nextButtonTapped() {
-
+    
 }
 
+extension ViewController {
+    private enum CurrentLight {
+        case red, yellow, green
+    }
+}
